@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Aranhaverso · Homem-Aranha</title>
+  <!-- Google Fonts (para ícones e tipografia leve) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- BARRA DE ACESSIBILIDADE (fixa) -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+    <button id="decreaseFont" aria-label="Diminuir tamanho da fonte">A-</button>
+    <button id="increaseFont" aria-label="Aumentar tamanho da fonte">A+</button>
+    <button id="toggleContrast" aria-label="Alternar alto contraste">Alto contraste</button>
+  </div>
 
+  <!-- HEADER -->
+  <header role="banner" aria-label="Cabeçalho principal">
+    <div class="container header-grid">
+      <div class="logo" aria-label="Aranhaverso - logotipo">
+        <span class="logo-icon">🕷️</span>
+        <span class="logo-text">Aranhaverso</span>
+      </div>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#sobre" aria-current="page">Sobre</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#poderes">Poderes</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" id="main-content">
+    <!-- SEÇÃO HERO -->
+    <section class="hero" id="sobre" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <article class="hero-content">
+          <h1 id="hero-title">O Incrível <br><span class="highlight">Homem-Aranha</span></h1>
+          <p>Com grandes poderes vêm grandes responsabilidades. Descubra o universo do herói que todos amamos.</p>
+          <a href="#galeria" class="btn-primary">Explorar galeria</a>
+        </article>
+        <div class="hero-image" aria-hidden="true">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Ccircle cx='150' cy='150' r='120' fill='%23cc0000'/%3E%3Cpath d='M150 60 L180 120 L240 120 L195 160 L210 220 L150 185 L90 220 L105 160 L60 120 L120 120 Z' fill='%231a1a1a'/%3E%3C/svg%3E"
+               alt="Silhueta do Homem-Aranha em vermelho e preto" class="hero-spidey">
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA (renderizada via JS) -->
+    <section class="section" id="galeria" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title" class="section-title">Galeria de trajes</h2>
+        <div class="gallery-grid" id="galleryGrid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- PODERES (com sistema de abas / acordeão) -->
+    <section class="section bg-alt" id="poderes" aria-labelledby="powers-title">
+      <div class="container">
+        <h2 id="powers-title" class="section-title">Poderes & Habilidades</h2>
+        <div class="accordion" id="accordionPowers" role="tablist" aria-multiselectable="true">
+          <!-- itens renderizados via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS (carrossel) -->
+    <section class="section" id="depoimentos" aria-labelledby="testimonials-title">
+      <div class="container">
+        <h2 id="testimonials-title" class="section-title">O que dizem sobre ele</h2>
+        <div class="carousel-wrapper" role="region" aria-label="Carrossel de depoimentos">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- itens renderizados via JS -->
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" id="prevBtn" aria-label="Depoimento anterior">◀</button>
+            <button class="carousel-btn next" id="nextBtn" aria-label="Próximo depoimento">▶</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo" aria-label="Rodapé">
+    <div class="container footer-grid">
+      <p>&copy; 2026 Aranhaverso — feito com <span aria-hidden="true">🕸️</span> e acessibilidade.</p>
+      <ul class="footer-links">
+        <li><a href="#">Política de privacidade</a></li>
+        <li><a href="#">Acessibilidade</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
